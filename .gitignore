@@ -1,0 +1,15 @@
+# Local Claude Code configuration
+.claude/
+CLAUDE.md
+
+# macOS
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
