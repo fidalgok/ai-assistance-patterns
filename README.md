@@ -22,17 +22,58 @@ This approach works whether you're deeply technical or just getting started with
 
 Skills are reusable workflows that AI assistants can invoke. They typically involve multiple stages and produce structured output.
 
-| Skill                                                  | Description                                                                                                                                                                                          |
-| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [transcript-processing](skills/transcript-processing/) | Transform raw transcripts (meetings, workshops, podcasts, tutorials) into structured, actionable outputs. Handles format conversion, mode selection (Operations vs. Content), and staged processing. |
+| Skill                                                                      | Description                                                                                                                                                                                                        |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [transcript-processing](skills/transcript-processing/)                     | **Full version.** Transform raw transcripts into structured, actionable outputs. Includes scripts for audio/video conversion (ffmpeg, Whisper, yt-dlp). Best for Claude Code or environments with terminal access. |
+| [transcript-processing-text-only](skills/transcript-processing-text-only/) | **Text-only version.** Same processing engine, no audio/video scripts. Works in claude.ai (web), Claude Desktop, or any environment. Just paste or upload a text transcript.                                       |
+
+### Custom Assistants
+
+Real-world system prompts for custom AI assistants, shared openly so you can study the patterns and adapt them. See [custom-assistants/](custom-assistants/) for the full overview.
+
+| Assistant                                                                     | Context                  | Description                                                                                                           |
+| ----------------------------------------------------------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| [IDA - Idea Discovery Assistant](custom-assistants/idea-discovery-assistant/) | AI Test Kitchen workshop | A brainstorming partner that helps participants develop concepts for custom AI assistants through guided questioning. |
 
 ### Commands
 
 Commands are simpler, single-purpose instructions that can be invoked as slash commands (e.g., `/init-project`).
 
+> **Note:** In Claude Code, [custom slash commands have been merged into skills](https://code.claude.com/docs/en/skills). A file at `.claude/commands/review.md` and a skill at `.claude/skills/review/SKILL.md` both create `/review` and work the same way. Your existing `.claude/commands/` files keep working. Skills add optional features like supporting file directories and frontmatter to control invocation behavior. Other tools may handle this differently.
+
 | Command                                  | Description                                                                                 |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------- |
 | [init-project](commands/init-project.md) | Scaffold a new coding project with CLAUDE.md and progress.md for session-to-session memory. |
+
+---
+
+## Getting the Files
+
+### Option 1: Download as a ZIP (No Git Required)
+
+If you're not familiar with Git, you can download everything as a ZIP file:
+
+1. Go to the [repository page on GitHub](https://github.com/fidalgok/ai-assistance-patterns)
+2. Click the green **"Code"** button near the top right
+3. Click **"Download ZIP"**
+4. Unzip the downloaded file — you'll have a folder with everything in it
+
+From there you can browse the files, copy what you need, or share individual files with your AI assistant.
+
+### Option 2: Clone with Git
+
+If you're comfortable with the terminal:
+
+```bash
+git clone https://github.com/fidalgok/ai-assistance-patterns.git
+cd ai-assistance-patterns
+```
+
+This gives you a local copy you can update later with `git pull` when new patterns are added.
+
+### Option 3: Ask Your AI Assistant
+
+Any AI model you collaborate with understands how to do this — but *which tool you're using matters*. If you're chatting on claude.ai or ChatGPT, ask it to walk you through downloading the files step by step. If you're using a tool with file system access (Claude Code, Codex, Claude Desktop), it can just clone the repo for you directly. Either way, this is a great opportunity to practice the kind of collaborative workflow these patterns are all about: use AI as both the vehicle and the guide to get you where you need to go.
 
 ---
 
