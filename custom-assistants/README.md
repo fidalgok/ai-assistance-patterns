@@ -20,6 +20,7 @@ The [AI Test Kitchen](https://cdil.bc.edu/resources/emerging-technologies/engagi
 | Assistant | Workshop Module | What It Does |
 | --- | --- | --- |
 | [IDA - Idea Discovery Assistant](idea-discovery-assistant/) | Module 1: From Ingredients to Ideas | A brainstorming partner that helps participants surface challenges and develop concepts for custom assistants. Asks thoughtful questions, suggests scoped ideas, and keeps things prototype-friendly. |
+| [CHAD - Conversational Helper for Assistant Design](conversational-helper-for-assistant-design/) | Module 2: Cooking up a Prototype | An interactive guide that walks you through designing a custom assistant — from a rough idea to a working system prompt. Asks questions, drafts the prompt, and iterates with you until it's right. |
 
 More workshop assistants may be added as the series develops.
 

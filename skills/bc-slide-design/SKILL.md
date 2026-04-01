@@ -1,6 +1,9 @@
 ---
 name: bc-slide-design
 description: Create animation-rich HTML presentations styled with Boston College's brand identity. Two curated BC themes (dark and light) using oklch color space with built-in light/dark mode toggle and on-the-fly typography adjustment. Supports building from outlines/content, creating from scratch, enhancing existing HTML, converting PPT files, and exporting to PPTX. Use when the user wants BC-branded slides, presentations, or slide design. Also use when the user needs to present content at a meeting, conference, workshop, or talk — even if they say "deck", "visuals for my talk", "something to show on screen", or just describe needing formatted content for an audience.
+metadata:
+  version: "1.0.0"
+  sharing: public
 ---
 
 # BC Slide Design Skill

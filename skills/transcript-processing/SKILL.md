@@ -6,6 +6,9 @@ description: >
   Handles multiple input formats (text, audio, video, YouTube URLs) with automatic format detection and conversion.
   Supports two processing modes: Operations (action items, decisions, next steps) and Content (frameworks, insights, teachable moments).
   Use when extracting structured insights from any recorded or transcribed spoken content.
+metadata:
+  version: "1.0.0"
+  sharing: public
 ---
 
 # Transcript Processor
@@ -50,6 +53,28 @@ A unified skill for transforming raw transcripts into structured, actionable out
 ```
 
 These scripts are in the `scripts/` directory. They handle conversion and output a clean text transcript.
+
+### Time Range Extraction
+
+When only a portion of the source is needed, specify a time range with `--start` and/or `--end`:
+
+**For YouTube URLs:**
+```bash
+./scripts/youtube-transcript.sh --start 1:22:00 "https://youtube.com/watch?v=..."
+./scripts/youtube-transcript.sh --start 30:00 --end 1:15:00 "https://youtube.com/watch?v=..."
+```
+
+**For audio/video files:**
+```bash
+./scripts/audio-to-text.sh --start 1:22:00 "/path/to/file.mp3"
+./scripts/audio-to-text.sh --start 30:00 --end 1:15:00 "/path/to/file.mp4"
+```
+
+**Time format:** Flexible — accepts `HH:MM:SS`, `H:MM:SS`, `MM:SS`, or just seconds. Either `--start` or `--end` can be omitted (defaults to beginning/end respectively).
+
+**How it works:**
+- **Subtitle path:** Filters the SRT by timestamp before cleaning (fast — the full SRT is tiny)
+- **Audio path:** Trims audio with ffmpeg before running Whisper (significant savings on long recordings)
 
 ---
 

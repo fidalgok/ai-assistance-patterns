@@ -1,11 +1,13 @@
 ---
-name: transcript-processing
-
+name: transcript-processing-text-only
 description: >
   Unified workflow for processing transcripts from meetings, workshops, podcasts, tutorials, and other spoken content.
   Accepts text transcripts via paste or file upload.
   Supports two processing modes: Operations (action items, decisions, next steps) and Content (frameworks, insights, teachable moments).
   Use when extracting structured insights from any recorded or transcribed spoken content.
+metadata:
+  version: "1.0.0"
+  sharing: public
 ---
 
 # Transcript Processor
