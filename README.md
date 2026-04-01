@@ -27,6 +27,7 @@ Skills are reusable workflows that AI assistants can invoke. They typically invo
 | [bc-slide-design](skills/bc-slide-design/)                                 | Generate zero-dependency, animation-rich HTML presentations styled with Boston College's brand identity. Supports building from outlines, creating from scratch, enhancing existing HTML, converting PPT files, and exporting to PPTX. |
 | [transcript-processing](skills/transcript-processing/)                     | **Full version.** Transform raw transcripts into structured, actionable outputs. Includes scripts for audio/video conversion (ffmpeg, Whisper, yt-dlp). Best for Claude Code or environments with terminal access. |
 | [transcript-processing-text-only](skills/transcript-processing-text-only/) | **Text-only version.** Same processing engine, no audio/video scripts. Works in claude.ai (web), Claude Desktop, or any environment. Just paste or upload a text transcript.                                       |
+| [formative-learning-design](skills/formative-learning-design/)             | Design pedagogically rich learning experiences — simulations, workshops, case studies, role plays, and AI-supported exercises. Walks through discovery, design tree, pedagogical checks, and asset drafting.         |
 
 ### Custom Assistants
 
