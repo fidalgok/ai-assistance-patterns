@@ -1,8 +1,8 @@
 ---
 name: bc-slide-design
-description: Create animation-rich HTML presentations styled with Boston College's brand identity. Two curated BC themes (dark and light) using oklch color space with built-in light/dark mode toggle and on-the-fly typography adjustment. Supports building from outlines/content, creating from scratch, enhancing existing HTML, converting PPT files, and exporting to PPTX. Use when the user wants BC-branded slides, presentations, or slide design. Also use when the user needs to present content at a meeting, conference, workshop, or talk — even if they say "deck", "visuals for my talk", "something to show on screen", or just describe needing formatted content for an audience.
+description: Create animation-rich HTML presentations styled with Boston College's brand identity. Two default BC themes (dark and light) using oklch color space, plus opt-in variant palettes (e.g., Precision Product) for tech-focused decks. Includes built-in light/dark mode toggle and on-the-fly typography adjustment. Supports building from outlines/content, creating from scratch, enhancing existing HTML, converting PPT files, and exporting to PPTX. Use when the user wants BC-branded slides, presentations, or slide design. Also use when the user needs to present content at a meeting, conference, workshop, or talk — even if they say "deck", "visuals for my talk", "something to show on screen", or just describe needing formatted content for an audience.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   sharing: public
 ---
 
@@ -17,6 +17,22 @@ Create zero-dependency, animation-rich HTML presentations styled with Boston Col
 3. **On-Brand by Default** — Every presentation uses BC's official color palette. No guessing.
 4. **Production Quality** — Well-commented, accessible, and performant code.
 5. **Viewport Fitting** — Every slide fits exactly within the viewport. No scrolling within slides, ever. This is the single most common visual defect to watch for.
+
+---
+
+## Design Contract (Read First)
+
+The design language for this skill lives in two places:
+
+- **`DESIGN.md`** (skill root) — Authoritative tokens and language for the two default BC palettes (BC Maroon dark / BC Cream light). Read this **before** generating any deck. The frontmatter is machine-readable; treat the values as the canonical source for colors, typography roles, spacing, radii, motion, and component contracts. The prose explains the *why* and *when*.
+- **`reference/palettes/`** — Variant palettes (e.g., `precision-product.md`) that override the `palettes` block of `DESIGN.md` while inheriting everything else. Only load a variant file if the user has chosen that palette in Phase 2.
+
+**The two specific rules most easily missed:**
+
+1. **Title-slide content centers by default** — `align-items: center` on `.slide-center` is part of the title-slide contract, not a per-deck fix. See `reference/style-presets.md` Common Layout Fixes.
+2. **Bullet sizing depends on role.** Bullets that *are* the slide's main content use `subtitle` size (`bullet-list--primary`, the default). Bullets that support a heading or live inside a card use `body` size (`bullet-list--secondary`). See `reference/type-hierarchy.md` for the decision tree and worked examples.
+
+When in doubt about a sizing or component decision, `DESIGN.md` and `reference/type-hierarchy.md` answer first; this SKILL.md governs *workflow*.
 
 ---
 
@@ -86,27 +102,46 @@ If user has content, ask them to share it (text, bullet points, images, etc.).
 
 ## Phase 2: Style Selection
 
-### BC Brand Presets
+### Default BC Presets
 
-Two curated BC-branded themes using oklch color space with warm understated tones and no true black.
+Two default BC-branded themes using oklch color space with warm understated tones and no true black. Full token reference in `DESIGN.md`.
 
 | Preset | Vibe | Best For |
 |--------|------|----------|
 | **BC Maroon** (Dark) | Sophisticated, confident, premium | Keynotes, formal presentations, evening events |
 | **BC Cream** (Light) | Warm, approachable, editorial | Workshops, team meetings, teaching sessions |
 
-Both presets include a built-in light/dark mode toggle and an admin panel for on-the-fly typography adjustment.
+Default decks include both modes with a light/dark toggle, plus the admin panel for on-the-fly typography adjustment.
+
+### Variant Palettes
+
+When the default register is wrong for the room, use a variant palette from `reference/palettes/`. Each variant is a single-mode (light-only or dark-only) palette swap that inherits all typography roles, spacing, motion, and component contracts from `DESIGN.md`.
+
+| Variant | File | Mode | Best For |
+|---------|------|------|----------|
+| **Precision Product** | `reference/palettes/precision-product.md` | Light | Tech demos, AI tooling, product walkthroughs, code-heavy talks |
+| **Playful Teacher** | `reference/palettes/playful-teacher.md` | Light | Tutorial decks, hands-on lessons, classroom explainers, onboarding |
+| **Tactile Media** | `reference/palettes/tactile-media.md` | Dark | Engineering retros, product team reviews, creative-media work |
+| **Midnight Studio** | `reference/palettes/midnight-studio.md` | Dark | Policy frameworks, AI strategy, formal-tech decks shown in dark rooms |
+| **Phthalo Editorial** | `reference/palettes/phthalo-editorial.md` | Light + Dark | Refined editorial decks — book launches, gallery openings, lux brand presentations. Two-mode (toggle enabled). |
 
 ### Theme Selection
 
 **Question: Theme Selection**
 - Header: "Theme"
-- Question: "Which BC theme would you like?"
+- Question: "Which palette fits this deck?"
 - Options:
-  - "BC Maroon (Dark)" — Sophisticated dark background with maroon and gold accents (Recommended)
-  - "BC Cream (Light)" — Warm cream background with maroon text and gold highlights
+  - "BC Maroon (Dark)" — Default. Sophisticated dark background with maroon and gold accents (Recommended for keynotes)
+  - "BC Cream (Light)" — Default. Warm cream background with maroon text and gold highlights (Recommended for workshops)
+  - "Precision Product" — Variant. Cream/paper editorial palette for tech demos and product walkthroughs
+  - "Playful Teacher" — Variant. Cloud-blue cream with friendly Fraunces, sky/lemon/berry accents — for tutorials and lessons
+  - "Tactile Media" — Variant. Forest-green dark with acid-green accent and condensed display — for engineering and creative reviews
+  - "Midnight Studio" — Variant. Deep blue-black with subtle radial gradient and yellow-orange (#fccd08) accent — for formal-tech and policy talks
+  - "Phthalo Editorial" — Variant. Phthalo green + antique gold + cream, Cormorant + Jost — for refined editorial decks. Two modes (toggle stays enabled).
 
-> **Style previews:** If the user includes `--preview` in their request, generate two mini-preview files (one title slide each) in `.claude-design/slide-previews/` so they can compare themes in the browser. See README.md for details.
+If the user picks a variant, **load the matching file from `reference/palettes/`** before generating the deck. The variant file contains the palette tokens and signature visual moves that override the defaults.
+
+> **Style previews:** If the user includes `--preview` in their request, generate mini-preview files (one title slide per option) in `.claude-design/slide-previews/` so they can compare in the browser. See README.md for details.
 
 ---
 
@@ -280,7 +315,7 @@ See `reference/style-presets.md` for complete animation CSS. Quick reference:
 
 ## DO NOT USE (Generic AI Patterns)
 
-Avoid generic AI design defaults: Inter/Roboto fonts, indigo/purple gradients, true black (#000000), everything-centered layouts, gratuitous glassmorphism. See `reference/style-presets.md` for the full list.
+Avoid generic AI design defaults: Inter/Roboto fonts, indigo/purple gradients, true black (#000000), everything-centered layouts, gratuitous glassmorphism, clickbait/hyperbolic headings. See `reference/style-presets.md` for the full list and the Common Layout Fixes section for centering patterns.
 
 ---
 

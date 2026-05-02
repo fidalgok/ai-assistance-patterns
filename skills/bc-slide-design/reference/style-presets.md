@@ -804,6 +804,99 @@ color: oklch(0.41 0.155 29);  /* Modern browsers */
 
 ---
 
+## Common Layout Fixes
+
+### Title/End Slide Vertical Centering
+
+**Problem:** Using `flex` with `justify-content: center` on a slide column, then pushing a footer to the bottom with `margin-top: auto`. This biases the main content upward — it's not truly centered, it's centered *above* the footer.
+
+**Fix:** Use a 3-row CSS grid: `grid-template-rows: 1fr auto 1fr`. Content goes in row 2 (centered), footer goes in row 3 with `align-self: end`. The empty first row balances the footer's height.
+
+```css
+.title-slide {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+.title-slide .slide-center {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* REQUIRED — centers H1 and other children
+                                  inside the flex column. Without this,
+                                  any child with a max-width aligns to the
+                                  flex-start (left) edge. This is the
+                                  single most common title-slide bug. */
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+.title-slide .slide-footer { grid-row: 3; align-self: end; }
+```
+
+```html
+<section class="slide title-slide">
+    <div class="slide-center">
+        <!-- Main content — all children center horizontally -->
+    </div>
+    <p class="slide-footer small-text">Footer text</p>
+</section>
+```
+
+Apply this pattern to any slide that has a footer element pinned to the bottom. **All title-slide content centers by default — this is a contract, not a per-deck fix.**
+
+### Heading Centering
+
+**Default:** `h2` elements in presentations should be `text-align: center` unless the slide layout specifically calls for left-aligned headings (e.g., slides with left-aligned body lists or two-column layouts). When body content below a heading is centered, a left-aligned heading looks like a bug.
+
+### Bullet List Sizing (Primary vs Secondary)
+
+**Problem:** Sizing bullets at `body` size when they're the slide's main content — then a `subtitle`-sized lead paragraph below "punches through" the bullets visually, inverting hierarchy.
+
+**Rule (from `DESIGN.md` and `reference/type-hierarchy.md`):**
+- Bullets that ARE the slide's main content → `subtitle` size (`bullet-list--primary`, default)
+- Bullets that support a heading or live inside a card → `body` size (`bullet-list--secondary`)
+
+```css
+/* Primary — bullets ARE the main slide content. This is the default. */
+ul.bullet-list li,
+ul.bullet-list--primary li {
+    font-size: var(--subtitle-size);
+    color: var(--text-primary);
+    line-height: 1.45;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+/* Secondary — bullets support a heading or live inside a card */
+ul.bullet-list--secondary li,
+.card ul.bullet-list li {     /* auto-secondary inside cards */
+    font-size: var(--body-size);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* Marker (shared) */
+ul.bullet-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 12px;
+    height: 1.5px;
+    background: var(--accent-secondary);
+}
+
+ul.bullet-list li strong {
+    color: var(--accent-secondary);
+    font-weight: 500;
+}
+```
+
+When a `lead` paragraph appears below primary bullets, it should be `subtitle` size in `--text-secondary` color — same size as the bullets, lower color weight. Hierarchy is communicated by color, not size.
+
+---
+
 ## DO NOT USE (Generic AI Patterns)
 
 **Fonts:** Inter, Roboto, Arial, system fonts as display
@@ -813,6 +906,8 @@ color: oklch(0.41 0.155 29);  /* Modern browsers */
 **Layouts:** Everything centered, generic hero sections, identical card grids
 
 **Decorations:** Realistic illustrations, gratuitous glassmorphism, drop shadows without purpose
+
+**Copy:** Clickbait or hyperbolic headings on slides ("The Trick That Changes Everything," "Game-Changing," "The One Thing You Need"). Educational content earns its own weight — describe what it is, not what it promises. See anti-pattern #20 in the Writing with AI hub.
 
 ---
 

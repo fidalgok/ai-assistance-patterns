@@ -1,23 +1,38 @@
 ---
 name: clean-export
-description: Cleans up a raw Claude Code /export conversation file — strips terminal chrome, fixes line wrapping, formats as clean readable markdown with Human/Assistant turns. Use when Kyle pastes a conversation export and wants a shareable version.
-argument-hint: <path-to-exported-file>
+description: Cleans up a raw conversation export (Claude Code /export markdown OR Claude Desktop session-export folder with JSONL) into readable markdown. Strips chrome, collapses tool calls, preserves the conversation. Use when the user points at an export file or session folder.
+argument-hint: <path-to-export-file-or-folder>
 metadata:
-  version: "1.0.0"
+  version: "1.1.1"
   sharing: public
 ---
 
 # Clean Export
 
-Takes a raw Claude Code `/export` file and produces a clean, readable markdown version suitable for sharing, archiving, or showcasing.
+Produces a clean, readable markdown transcript from a raw export. Two source formats are supported — pick the right flow based on what the argument points to.
 
 ## Invocation
 
 ```
-/clean-export path/to/Conversation Export.md
+/clean-export <path>
 ```
 
-The argument is the path to the raw export file (relative to the working directory or absolute).
+The argument can be:
+- A single `.md` file from Claude Code `/export` (terminal) — follow the rules in this file.
+- A session-export folder from the Claude Desktop app (contains `metadata.json`, a `<uuid>.jsonl`, and a `logs/` subdir) — use the JSONL flow in [cowork-export.md](cowork-export.md). Do NOT attempt to hand-parse the JSONL; run the bundled `extract_cowork.py` script.
+- A `.jsonl` file directly (same flow as above, just pointed one level deeper).
+
+### How to pick the flow
+
+1. If the path is a directory, check for `metadata.json` + `*.jsonl` → cowork flow.
+2. If the path ends in `.jsonl` → cowork flow.
+3. If the path is a `.md`/`.txt` file → terminal flow (rules below).
+
+---
+
+# Terminal-export flow (Claude Code `/export`)
+
+Takes a raw Claude Code `/export` file and produces a clean, readable markdown version suitable for sharing, archiving, or showcasing.
 
 ## What Gets Cleaned
 
