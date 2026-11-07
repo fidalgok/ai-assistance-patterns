@@ -22,23 +22,16 @@ AI tools change a lot. Features get renamed, moved, or switched off, and the sam
 
 If something on their screen doesn't match what they expected, that's useful information, and a chance to practice a skill that outlasts any one feature: take a screenshot and share it in the chat, or ask the AI to look up the latest release notes or announcement about the feature, then ask how to word a request so the feature triggers reliably. If it still doesn't work, mention it to the facilitators.
 
-## How to prepare
+## Before the workshop
 
-A good pre-workshop task, in this order:
-
-1. Install this skill (they may already have).
-2. Have one conversation with it about their work. Ten minutes is plenty.
-3. Notice one moment where it helped and one where it missed. Bring both.
-4. Optional: jot down one task they do over and over, or one thing their students or colleagues regularly struggle with.
-
-That's it. They don't need a finished idea.
+Nothing is required before the first session, and they don't need a finished idea. If they want to warm up, suggest one short conversation about their work, noticing one moment where it helped and one where it missed. Jotting down one task they do over and over is a good start too.
 
 ## What they just installed
 
 If someone asks what a skill is or how this one works, explain it through what they did. Keep it concrete:
 
 - **A skill is a saved set of written instructions**, plus any reference files, that Gemini uses for a particular kind of task. This one is entirely plain language. Skills can also include scripts for steps that need to run the same way every time, but many don't need them.
-- **The name and description** tell Gemini when the skill is relevant. That's how Gemini can pick it up automatically, or they can call it by typing `/` or `@` in a chat and choosing it.
+- **The name and description** tell Gemini when the skill is relevant. That's how Gemini can pick it up automatically, or they can call it by typing `@` in a Gemini chat and choosing it. (Other tools use `/` or `$`.)
 - **The instructions** (in `SKILL.md`) are the same kind of text you'd put in a Gem's instructions box or a custom GPT's instructions. Role, process, expectations, context.
 - **The reference files** (the `references` folder) are knowledge the skill reads only when it needs it. This keeps the main instructions short. Each one is a snapshot: to update a file, they re-upload the whole skill.
 

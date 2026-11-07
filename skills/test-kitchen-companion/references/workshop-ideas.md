@@ -32,7 +32,7 @@ A spectrum: a chatbot that only writes text â†’ an assistant with a few tools â†
 
 This explains common surprises. Gemini can't edit your spreadsheet in a chat because the app doesn't give it that tool there. A huge document makes the assistant forget things because the context has limits. And something learned in Gemini carries over to Claude or Copilot, because the building blocks are the same; only the buttons differ.
 
-When someone shows you a feature, you can ask them: "Which building block is this?" A skill and a notebook's sources are context. Web search is a tool. The model picker is the model.
+When someone shows you a feature, you can ask them: "Which building block is this?" A skill is mostly context, and sometimes tools when it includes scripts. A notebook's sources are context. Web search is a tool. The model picker is the model.
 
 ## Mental models
 

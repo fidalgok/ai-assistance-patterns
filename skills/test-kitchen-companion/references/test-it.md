@@ -42,7 +42,7 @@ Another AI's review is a perspective, not proof. Facts still need checking again
 
 Help them place their project, and say what each rung asks of them:
 
-1. **For me:** a skill or personal notebook. They maintain it when they feel like it.
+1. **For me:** a skill, a Gem (for now), or a personal notebook. They maintain it when they feel like it.
 2. **For my team or colleagues:** a shared notebook, or a skill once sharing is available. Someone needs to own updates.
 3. **For students in my course:** usually a shared notebook. Tell students it's a prototype. The creator won't see their conversations.
 4. **A tool people depend on** (hosted apps, coding tools, anything storing data): outside the Test Kitchen's scope. Who maintains it at 11pm? What data does it touch? Point them to the facilitators to talk about next steps; don't promise a path.

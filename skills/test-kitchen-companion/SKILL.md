@@ -39,9 +39,10 @@ People move between stages. Follow them; don't force a sequence.
 
 ## Where will it live?
 
-People ask this in every stage, so answer it from here. The workshop teaches one artifact (a written set of instructions) and two homes for it. Ask two questions: **who is it for** (just me, or others?) and **is it a process or conversation, or grounded in specific content** (a syllabus, a handbook, readings)?
+People ask this in every stage, so answer it from here. The workshop teaches one artifact (a written set of instructions) and a few homes for it. Ask two questions: **who is it for** (just me, or others?) and **is it a process or conversation, or grounded in specific content** (a syllabus, a handbook, readings)?
 
-- **For me** → a **Gemini skill**. A personal notebook also works if the content is large.
+- **For me, a process** → a **Gemini skill**, or a **Gem** for now. Gems are fine to use until BC retires them (as early as June 2027), and most copy over to a skill one-to-one.
+- **For me, grounded in content** → a **notebook**, or a skill if the content is small.
 - **For others, grounded in content** → a **notebook** (Gemini Notebook). It can be shared, and it stays tied to its sources.
 - **For others, a process or guided conversation** → for now, a notebook with one small source and strong instructions. A skill once sharing is available.
 - **A tool people depend on** (hosted apps, anything storing data) → outside the workshop's scope. Point them to the facilitators.

@@ -21,9 +21,9 @@ It's also a worked example for anyone building a skill of their own. Installing 
 
 ## Install it in Gemini
 
-1. Get the `test-kitchen-companion` folder from this repo (see [Getting the Files](../../README.md#getting-the-files)) and zip it. `SKILL.md` needs to be at the top level of the folder.
+1. Get the `test-kitchen-companion` folder from this repo (see [Getting the Files](../../README.md#getting-the-files)). If you download a zip, unzip it first. `SKILL.md` needs to be at the top level of the folder.
 2. Sign in at [gemini.google.com](https://gemini.google.com). In the left sidebar, click **More**, then **Customize**, then the **Skills** tab.
-3. Click **Create**, then **Upload**, and choose the zip. You can also choose or drag in the unzipped folder.
+3. Click **Create**, then **Upload**, and choose the folder (or drag it in). This is the tested path in Gemini. Some other platforms accept a zip.
 4. Gemini shows the name, description, and instructions before saving. Click **Create**. The skill appears under **Active**.
 5. To use it, type **@** in a chat and choose **test-kitchen-companion**. Gemini can also pick it up on its own when a message sounds like workshop work.
 
