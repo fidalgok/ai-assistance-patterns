@@ -1,6 +1,6 @@
 # Workshop ideas
 
-The core concepts of the Test Kitchen. Use them as habits inside the participant's task, not vocabulary to memorize. Bring one in when it helps and explain it in a sentence.
+The core concepts of the Test Kitchen. Use them as habits inside the participant's task, not vocabulary to memorize. Bring one in when it helps and explain it plainly.
 
 ## Five Design Basics
 
@@ -10,7 +10,7 @@ The core concepts of the Test Kitchen. Use them as habits inside the participant
 4. **Context is everything.** AI is lost without your goals, audience, examples, and intent. Define what good looks like to you.
 5. **When in doubt, ask AI for help.** Stuck on instructions? Talk it through with AI. It's both the vehicle and the guide.
 
-Ethan Mollick's version, in one line: clearly specify your goals, the output, what good and bad look like, and how to test the results. "Yes, this is just management."
+Ethan Mollick's version, in one line: clearly specify your goals, the output, what good and bad look like, and how to test the results. "Yes, this is just management." He writes about this idea often, on his blog [One Useful Thing](https://www.oneusefulthing.org/) and on X as [@emollick](https://x.com/emollick).
 
 ## The 4Ds
 
@@ -24,13 +24,13 @@ Ethan Mollick's version, in one line: clearly specify your goals, the output, wh
 Every AI product is some combination of four building blocks. Knowing them makes a new tool less confusing:
 
 - **Model:** the AI itself (a Gemini, Claude, or GPT model).
-- **Harness:** the app wrapped around the model: Gemini, NotebookLM, Copilot, Claude. It decides what the model can see and do.
-- **Tools:** what the harness lets the model do beyond writing text: search the web, read a file, create an image, act in another app. More tools and permissions make something more "agentic."
+- **The app** (sometimes called the harness): the software wrapped around the model, such as Gemini, Gemini Notebook, Copilot, or Claude. It's your interface to the model, and it's also the model's interface to everything else: which tools it can use, what actions it can take, and what context it can reach beyond what you've typed or uploaded.
+- **Tools:** what the app lets the model do beyond writing text: search the web, read a file, create an image, act in another app. More tools and permissions make something more "agentic."
 - **Context:** everything the model is given to work with: instructions, skills, documents, and the conversation so far.
 
 A spectrum: a chatbot that only writes text → an assistant with a few tools → an agent that works on its own for a long time.
 
-This explains common surprises. Gemini can't edit your spreadsheet in a chat because the harness doesn't give it that tool there. A huge document makes the assistant forget things because the context has limits. And something learned in Gemini carries over to Claude or Copilot, because the building blocks are the same; only the buttons differ.
+This explains common surprises. Gemini can't edit your spreadsheet in a chat because the app doesn't give it that tool there. A huge document makes the assistant forget things because the context has limits. And something learned in Gemini carries over to Claude or Copilot, because the building blocks are the same; only the buttons differ.
 
 When someone shows you a feature, you can ask them: "Which building block is this?" A skill and a notebook's sources are context. Web search is a tool. The model picker is the model.
 

@@ -1,10 +1,10 @@
 # Test Kitchen Companion
 
-A companion skill for the [BC AI Test Kitchen](https://cdil.bc.edu/resources/emerging-technologies/engaging-with-ai/ai-test-kitchen/), a three-session, hands-on workshop at Boston College run by Tim Lindgren, Kyle Fidalgo, and Luis Gaitan. It was built and tested in Gemini. The NotebookLM version of the workshop companion was adapted from it.
+A companion skill for the [BC AI Test Kitchen](https://cdil.bc.edu/resources/emerging-technologies/engaging-with-ai/ai-test-kitchen/), a three-session, hands-on workshop at Boston College run by Tim Lindgren, Kyle Fidalgo, and Luis Gaitan. It was built and tested in Gemini. The Gemini Notebook version of the workshop companion was adapted from it.
 
 ## Who it's for
 
-Workshop participants: faculty, staff, and students, most of them not technical. They install it before Session 1, have a short conversation with it about their own work, and use it through the workshop to find an idea, write it down as instructions or a skill, and test it.
+Workshop participants: faculty, staff, and students, most of them not technical. They install it before the first session, have a short conversation with it about their own work, and use it through the workshop to find an idea, write it down as instructions or a skill, and test it.
 
 It's also a worked example for anyone building a skill of their own. Installing it and reading its files is part of the lesson: a skill is a folder of plain-language instructions, and nothing in it is hidden.
 
@@ -13,9 +13,9 @@ It's also a worked example for anyone building a skill of their own. Installing 
 - `SKILL.md`: the main instructions. It sets the companion's role and working style, routes each person to the right workshop stage, and holds the guardrails.
 - `references/`: six files the companion reads only when a conversation needs them.
   - `orientation.md`: what the workshop is, how to prepare, and what a skill is
-  - `find-an-idea.md`: Session 1, finding an idea worth prototyping (adapted from [IDA](../../custom-assistants/idea-discovery-assistant/))
-  - `write-it-down.md`: Session 2, turning a task into instructions and deciding whether it belongs in a skill or a notebook
-  - `test-it.md`: Session 3, testing and revising a prototype
+  - `find-an-idea.md`: finding an idea worth prototyping (adapted from [IDA](../../custom-assistants/idea-discovery-assistant/))
+  - `write-it-down.md`: turning a task into instructions and deciding whether it belongs in a skill or a notebook
+  - `test-it.md`: testing and revising a prototype
   - `workshop-ideas.md`: the workshop's core concepts
   - `off-menu.md`: optional chef personas, turned on by typing `--offmenu`
 

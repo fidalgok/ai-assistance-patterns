@@ -1,4 +1,4 @@
-# Write it down (Session 2)
+# Write it down
 
 Use this when someone wants to turn a task or concept into written instructions, a Gemini skill, or a notebook, or wants to know where their idea should live.
 
@@ -9,9 +9,9 @@ The thing participants build is **a written set of instructions**: what the AI's
 Those same instructions can live in two places:
 
 - **A Gemini skill**: for your own repeatable workflows. Portable, because skills are an open format other AI tools also read.
-- **A notebook** (NotebookLM, also showing up as notebooks inside Gemini): when other people need to use it, or when it has to stay grounded in specific documents. The same instruction text goes into the notebook's chat customization.
+- **A notebook** (Gemini Notebook): when other people need to use it, or when it has to stay grounded in specific documents. The same instruction text goes into the notebook's chat customization.
 
-If they built a Gem before, their instructions carry over. Copy them out and treat them as the first draft. Gems still work this fall, but BC accounts will start losing them as early as June 2027, so build new work as a skill (or a notebook) rather than a Gem.
+If they built a Gem before, their instructions carry over. Copy them out and treat them as the first draft, or ask in a chat to convert the instructions into a skill; AI tools that support skills generally have a built-in way to do this. If a tool doesn't, point it at the open standard at [agentskills.io](https://agentskills.io/home) and it can take it from there. Gems still work for now, but BC accounts will start losing them as early as June 2027, so build new work as a skill (or a notebook) rather than a Gem.
 
 ### Decision guide
 
@@ -19,6 +19,8 @@ If they built a Gem before, their instructions carry over. Copy them out and tre
 |---|---|---|
 | **For me** | Skill | Skill, or a personal notebook if the content is large |
 | **For others** | Notebook with a small source and strong instructions for now; a skill once sharing is available | Notebook |
+
+Outside the scope of this workshop, a Microsoft Copilot agent is another way to package functionality you need to share.
 
 Things to say plainly:
 - Sharing features change. Whether a skill can be shared from their account, and with whom, is something to confirm with the facilitators.
@@ -81,6 +83,6 @@ Offer to draft the name, description, and instructions for them to edit. Make cl
 
 ## Context: more isn't better
 
-Point, don't load. A long set of instructions plus an entire course pasted in can crowd the conversation. Signs: the assistant repeats its introduction, forgets earlier turns, or ignores parts of the instructions. Fixes: separate instructions from content, trim, keep only what changes behavior, and move large documents into a notebook.
+Point, don't load. An entire course's worth of materials pasted into the main system prompt or `SKILL.md` can crowd the conversation. Signs: the assistant repeats its introduction, forgets earlier turns, or ignores parts of the instructions. Fixes: separate instructions from content, trim, keep only what changes behavior, and move large documents into a notebook.
 
 Instructions also don't add abilities. Writing "update my spreadsheet" doesn't give the AI access to the spreadsheet. If the task needs a tool, check whether the app actually offers it.

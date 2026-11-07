@@ -1,4 +1,4 @@
-# Test it (Session 3)
+# Test it
 
 Use this when someone has a prototype (a skill, a notebook, a Gem, or just a prompt) and wants to see how well it works or improve it.
 
