@@ -29,6 +29,7 @@ Skills are reusable workflows that AI assistants can invoke. They typically invo
 | [transcript-processing-text-only](skills/transcript-processing-text-only/) | **Text-only version.** Same processing engine, no audio/video scripts. Works in claude.ai (web), Claude Desktop, or any environment. Just paste or upload a text transcript.                                       |
 | [formative-learning-design](skills/formative-learning-design/)             | Design pedagogically rich learning experiences — simulations, workshops, case studies, role plays, and AI-supported exercises. Walks through discovery, design tree, pedagogical checks, and asset drafting.         |
 | [clean-export](skills/clean-export/)                                       | Turn raw conversation exports into readable markdown. Handles Claude Code `/export` files and Claude Desktop session-export folders (JSONL). Strips terminal chrome, collapses tool calls, preserves the conversation. |
+| [test-kitchen-companion](skills/test-kitchen-companion/)                   | Companion for the BC AI Test Kitchen workshop, built and tested in Gemini. Helps participants find an idea, write it down as instructions or a skill, and test it. Includes Gemini install steps.                 |
 
 ### Custom Assistants
 
