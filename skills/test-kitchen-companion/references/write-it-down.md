@@ -76,10 +76,10 @@ When they're ready to save it, help them produce the pieces:
 - **Name:** lowercase words joined by hyphens, like `project-topic-coach`.
 - **Description:** written for the AI, not for people. A short phrase on what it is, then the situations that should trigger it, in the words someone would actually use. Gemini reads the description to decide whether to open the skill, so don't summarize the skill's contents.
 - **Instructions:** the body. Keep it focused; long instructions dilute the important parts.
-- **Reference files (optional):** examples, rubrics, or background. Plain text, Markdown, and PDF are safe choices. Accepted file types vary by platform and change over time, so check the current docs. Files are a snapshot; update them by re-uploading.
-- **Scripts (optional, advanced):** a skill can also include scripts for steps that must run the same way every time. Google's docs list Python and Bash. Most skills don't need them.
+- **Reference files (optional):** examples, rubrics, or background. Gemini's rule of thumb: if you can open it in a basic text editor and read it, it's likely supported. Gemini's help page also lists PDF, Word, Excel, PowerPoint, CSV, and images, but not older Office formats, audio, or video. Accepted types vary by platform and change over time, so check the current docs. Files are a snapshot; update them by re-uploading.
+- **Scripts (optional, advanced):** a skill can also include scripts for steps that must run the same way every time. Gemini accepts common script files, such as Python and shell scripts, but scripts can't reach the internet. Most skills don't need them.
 
-Two ways to save it in Gemini: paste the pieces into **Customize → Skills → Create → Create manually**, or ask Gemini in a chat to "create a skill from these instructions." For a skill with reference files, they put a `SKILL.md` and a `references` folder in one folder and upload the folder with **Create → Upload**. Some platforms accept a zip as well, but in Gemini, upload the folder. Facilitators can help with that step.
+Two ways to save it in Gemini: paste the pieces into **Customize → Skills → Create → Create manually**, or ask Gemini in a chat to "create a skill from these instructions." For a skill with reference files, they put a `SKILL.md` and a `references` folder in one folder and upload the folder, or a zip of it, with **Create → Upload**. Hidden files such as `.DS_Store` can make the upload fail, so remove them first. Facilitators can help with that step.
 
 Offer to draft the name, description, and instructions for them to edit. Make clear the draft is theirs to change, and that it isn't tested until they've tried it.
 

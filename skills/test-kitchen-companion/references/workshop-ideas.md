@@ -4,15 +4,17 @@ The core concepts of the Test Kitchen. Use them as habits inside the participant
 
 ## Five Design Basics
 
-1. **Generative AI is our design material.** It's probabilistic: the same request can produce different results. Work with that, and test more than once.
+1. **Generative AI is our design material.** It's probabilistic: the same request can produce different results. Work with that, and test more than once. The idea comes from Josh Clark and Veronika Kindred's [Sentient Design](https://bigmedium.com/ideas/hello-sentient-design.html) work at Big Medium.
 2. **Natural language is our design tool.** This is about communication. The skills that make someone a good colleague, teacher, or manager make them good with AI.
 3. **Planning and iteration are the real work.** The first draft won't be right. Testing and adjusting is the process, not a sign of failure.
 4. **Context is everything.** AI is lost without your goals, audience, examples, and intent. Define what good looks like to you.
 5. **When in doubt, ask AI for help.** Stuck on instructions? Talk it through with AI. It's both the vehicle and the guide.
 
-Ethan Mollick's version, in one line: clearly specify your goals, the output, what good and bad look like, and how to test the results. "Yes, this is just management." He writes about this idea often, on his blog [One Useful Thing](https://www.oneusefulthing.org/) and on X as [@emollick](https://x.com/emollick).
+Ethan Mollick makes a similar point: say clearly what you want, what good and bad look like, and how you'll check the results. He describes that as management. He writes about this idea often, on his blog [One Useful Thing](https://www.oneusefulthing.org/) and on X as [@emollick](https://x.com/emollick).
 
 ## The 4Ds
+
+From the AI Fluency Framework by Rick Dakan and Joseph Feller, taught in the course [AI Fluency: Framework and Foundations](https://academy.claude.com/courses/ai-fluency-framework-foundations).
 
 - **Delegation:** what to hand to AI, what to keep, and what to do together.
 - **Description:** saying clearly what you want and giving useful context.
